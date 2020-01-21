@@ -92,8 +92,8 @@ function Append(id, clazz, date, name, url, idtag) {
  * @param {int} index - Index of the image.
  */
 function Register(id, index) {
-	$(".main").mouseover(function() {
-		id.append("<p id='new' class='centered' style='display: inline-block'> Author: " + pictures[index].GetName()) + "</p>";
+	$(".main").mouseenter(function() {
+		id.prepend("<p id='new' class='centered' style='display: inline-block'> Author: " + pictures[index].GetName()) + "</p>";
 	});
 	
 	$(".main").mouseleave(function() {
@@ -141,10 +141,9 @@ $(document).ready(function() {
 			pictures[index].GetUrl(),
 			pictures[index].GetId());
 			
-			Register($preview, index);
+		Register($preview, index);
+		window.location.href = "#preview";
 	});
 	
 	Register($preview, index);
 });
-
-
