@@ -123,9 +123,18 @@ $(document).ready(function() {
     });
 	
 	Render($preview, "main", pictures[index].GetDate(),
-		pictures[index].GetName(),
-		pictures[index].GetUrl(),
-		pictures[index].GetId());
+			pictures[index].GetName(),
+			pictures[index].GetUrl(),
+			pictures[index].GetId());
+	
+	setInterval(function() {
+		index = Math.round(Math.random() * 15);
+		Render($preview, "main", pictures[index].GetDate(),
+			pictures[index].GetName(),
+			pictures[index].GetUrl(),
+			pictures[index].GetId());
+		Register($preview, index);
+	}, 5000);
 	
 	for (let i = 0; i < pictures.length; ++i) {
 		Append($gallery, "gallery box", pictures[i].GetDate(),
@@ -142,7 +151,8 @@ $(document).ready(function() {
 			pictures[index].GetId());
 			
 		Register($preview, index);
-		window.location.href = "#preview";
+		// window.location.href = "#home";
+		this.classList.add("focused");
 	});
 	
 	Register($preview, index);
