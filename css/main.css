@@ -16,11 +16,14 @@ a {
 
 h1 {
 	font-size: 3em;
-    font-family: Stencil;
+    font-family: Verdana;
 	color: #f9f9f9;
 }
 
 .center { text-align: center; }
+ul.nav li a:hover { text-decoration: underline; }
+#preview { position: relative; }
+.container { margin: 5px; }
 
 img {
     display: block;
@@ -47,11 +50,6 @@ img.main:hover {
 #new {
 	background-color: #000000;
 	padding: 5px;
-	
-}
-
-#preview {
-	position: relative;
 }
 
 .centered {
@@ -69,8 +67,15 @@ img.gallery {
 	padding: 5px;
 }
 
+img.focus {
+	min-width: 50vw;
+	max-width: 50vw;
+	min-height: 50vh;
+	max-height: 40vh;
+}
+
 img.header {
-    max-width: 2.3em;
+    max-width: 2em;
     float: right;
 }
 
@@ -91,10 +96,6 @@ ul.nav li a {
         1px 1px 0 #000;
 }
 
-ul.nav li a:hover {
-    text-decoration: underline;
-}
-
 nav {
     list-style: none;
     padding: 0 0 0 0;
@@ -107,6 +108,7 @@ nav {
     left: 0;
     z-index: 9999;
     background-color: #9d8f8f;
+	font-family: Verdana, sans-serif;
 }
 
 ul.nav {
@@ -135,10 +137,6 @@ header {
     font-size: 4em;
     color: #ffb997;
 	background-color: #625757;
-}
-
-.container {
-    margin: 5px;
 }
 
 .filled {
