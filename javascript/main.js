@@ -145,14 +145,15 @@ $(document).ready(function() {
 	
 	$("img").click(function() {
 		index = this.id - 1;
-		Render($preview, "main", pictures[index].GetDate(),
+		Render($("#test"), "focus\' id='cur-img'", pictures[index].GetDate(),
 			pictures[index].GetName(),
 			pictures[index].GetUrl(),
 			pictures[index].GetId());
-			
-		Register($preview, index);
-		// window.location.href = "#home";
-		this.classList.add("focused");
+		let x = $("#cur-img").position();
+		$("#test").append("<button id='close' style='position: fixed; top: " + x.top + "px; left: " + x.left + "px; background-color: #ffffff;'>x</button>");
+		$("#close").click(function() {
+			$("#test").html("");
+		});
 	});
 	
 	Register($preview, index);
