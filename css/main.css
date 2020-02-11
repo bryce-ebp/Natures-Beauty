@@ -24,6 +24,7 @@ h1 {
 ul.nav li a:hover { text-decoration: underline; }
 #preview { position: relative; }
 .container { margin: 5px; }
+button#close:hover { cursor: pointer; }
 
 img {
     display: block;
