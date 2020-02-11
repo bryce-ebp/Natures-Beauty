@@ -149,11 +149,13 @@ $(document).ready(function() {
 			pictures[index].GetName(),
 			pictures[index].GetUrl(),
 			pictures[index].GetId());
-		let x = $("#cur-img").position();
-		$("#test").append("<button id='close' style='position: fixed; top: " + x.top + "px; left: " + x.left + "px; background-color: #ffffff;'>x</button>");
-		$("#close").click(function() {
-			$("#test").html("");
-		});
+		document.getElementById("cur-img").onload = function(e) {
+			let x = $("#cur-img").position();
+			$("#test").append("<button id='close' style='position: fixed; top: " + x.top + "px; left: " + x.left + "px; background-color: #ffffff;'>x</button>");
+			$("#close").click(function() {
+				$("#test").html("");
+			});
+		}
 	});
 	
 	Register($preview, index);
